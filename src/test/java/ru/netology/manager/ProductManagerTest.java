@@ -41,7 +41,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameOfSmartphone() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Galaxy M12");
@@ -61,7 +61,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByFirm() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Samsung");
@@ -71,7 +71,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameNegativeForBook() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Евгений Онегин");
@@ -81,7 +81,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameNegativeForSmartphone() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Nokia");
@@ -91,7 +91,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameNegativeForOther() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Teddy bear");

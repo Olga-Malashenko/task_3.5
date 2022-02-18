@@ -40,10 +40,9 @@ public class Product {
         this.price = price;
     }
 
-    Product product = new Product();
 
-    public boolean matches(String text) {
-        return product.getName().contains(text);
+    public boolean matches(String search) {
+        return getName().contains(search);
     }
 
     @Override

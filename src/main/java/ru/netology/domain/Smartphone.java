@@ -22,10 +22,11 @@ public class Smartphone extends Product {
         this.firm = firm;
     }
 
-    Smartphone smartphone = new Smartphone();
 
-    public boolean matches(String text) {
-        return super.matches(text) || smartphone.getFirm().contains(text);
+
+    @Override
+    public boolean matches(String search) {
+        return super.matches(search) || getFirm().contains(search);
     }
 
     @Override
