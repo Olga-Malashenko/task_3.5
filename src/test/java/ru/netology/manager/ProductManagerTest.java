@@ -31,7 +31,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameOfBook() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Мцыри");

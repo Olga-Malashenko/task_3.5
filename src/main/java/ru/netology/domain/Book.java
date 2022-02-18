@@ -22,6 +22,12 @@ public class Book extends Product {
         this.author = author;
     }
 
+    Book book = new Book();
+
+    public boolean matches(String text) {
+        return super.matches(text) || book.getAuthor().contains(text);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
