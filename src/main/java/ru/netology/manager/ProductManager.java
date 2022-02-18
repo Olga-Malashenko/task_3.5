@@ -37,7 +37,7 @@ public class ProductManager {
             if (book.getAuthor().contains(search)) { // проверим есть ли поисковое слово в данных об авторе
                 return true;
             }
-            if (book.getName().contains(search)) {
+            if (product.getName().contains(search)) {
                 return true;
             }
             return false;
