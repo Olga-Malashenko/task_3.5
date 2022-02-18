@@ -27,11 +27,11 @@ class ProductManagerTest {
     Product sixth = new Smartphone(6, "Galaxy M12", 14000, "Samsung");
     Product seventh = new Smartphone(7, "Galaxy A22", 21000, "Samsung");
     Product eighth = new Smartphone(8, "iPhone 13", 70000, "Apple");
-    Product ninth = new Product(9, "Teddy bear", 1700);
+
 
     @Test
     void shouldSearchByNameOfBook() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Мцыри");
@@ -41,7 +41,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameOfSmartphone() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Galaxy M12");
@@ -51,7 +51,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByAuthor() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Достоевский");
@@ -61,7 +61,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByFirm() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Samsung");
@@ -71,7 +71,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameNegativeForBook() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Евгений Онегин");
@@ -81,7 +81,7 @@ class ProductManagerTest {
 
     @Test
     void shouldSearchByNameNegativeForSmartphone() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
+        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth};
         doReturn(returned).when(repository).findAll();
 
         Product[] actual = manager.searchBy("Nokia");
@@ -89,13 +89,4 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    void shouldSearchByNameNegativeForOther() {
-        Product[] returned = {first,second,third,fourth,fifth,sixth,seventh,eighth, ninth};
-        doReturn(returned).when(repository).findAll();
-
-        Product[] actual = manager.searchBy("Teddy bear");
-        Product[] expected = new Product[0];
-        assertArrayEquals(expected, actual);
-    }
 }
