@@ -43,7 +43,8 @@ public class ProductManager {
             return false;
         }
         if (product instanceof Smartphone) { // если в параметре product лежит объект класса Book
-            Smartphone smartphone = (Smartphone) product; // положем его в переменную типа Book чтобы пользоваться методами класса Book
+            Smartphone smartphone = (Smartphone) product; // положем его в переменную типа Book
+            // чтобы пользоваться методами класса Book
             if (smartphone.getFirm().contains(search)) { // проверим есть ли поисковое слово в данных об авторе
                 return true;
             }
